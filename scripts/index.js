@@ -125,4 +125,6 @@ function handlePlayerTurn(coordinate) {
   // Verificar si el jugador ha acertado o fallado
   if (computerArmy.some(coordinate => coordinate.x === x && coordinate.y === y)) {
     alert('¡Hundiste un barco enemigo!');
-    computerArmy = computerArmy.filter(coordinate => coordinate.x
+    computerArmy = computerArmy.filter(coordinate => coordinate.x)
+}
+}
