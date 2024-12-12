@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,22 +17,46 @@
   <body>
     <nav class="navbar bg-body-secondary">
       <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Game board</span>
+        <span class="navbar-brand mb-0 h1">Juego de Batalla Naval</span>
       </div>
     </nav>
-    <div class="container">
-      <h1 class="text-center p-2">Bienvenidos!</h1>
-      <h2 class="text-center">
-        Para comenzar el juego, presione el botón "Iniciar"
-      </h2>
-      <p class="py-4">
-        La aplicación web consiste de juegos de mesa online, en el cual se puede
-        jugar al clásico juego de batalla naval pero en formato reducido. Sólo
-        debes seleccionar la opción 1 y seguir las instrucciones para jugar.
-        ¡Que te diviertas!
+
+    <div class="container mt-4">
+      <h1 class="text-center p-2">Bienvenidos al Juego</h1>
+      <h2 class="text-center">Para comenzar el juego, presione el botón "Iniciar"</h2>
+      <p class="py-4 text-center">
+        La aplicación web consiste en un juego de Batalla Naval en formato reducido.
+        Debes seleccionar la opción 1 para jugar y seguir las instrucciones.
+        ¡Diviértete!
       </p>
-      <div class="d-flex justify-content-center align-content-center my-3">
-        <button class="btn btn-primary" onclick="showMenu()">Iniciar</button>
+
+      <!-- Botón para iniciar -->
+      <div class="d-flex justify-content-center align-items-center my-3">
+        <button class="btn btn-primary" id="startGameButton">Iniciar</button>
+      </div>
+
+      <!-- Menú del juego -->
+      <div id="menu" class="text-center hidden">
+        <h3>Selecciona una opción:</h3>
+        <button class="btn btn-primary my-2" id="miniBattleButton">Jugar mini Batalla Naval</button>
+        <button class="btn btn-secondary my-2" id="catanButton">Jugar Catan (No disponible)</button>
+        <button class="btn btn-danger my-2" id="exitButton">Salir</button>
+      </div>
+
+      <!-- Contenedor del juego -->
+      <div id="gameContainer" class="hidden">
+        <h3 class="text-center">Juego de Batalla Naval</h3>
+        <div id="gameBoard" class="game-board"></div>
+
+        <!-- Mostrar coordenada -->
+        <div class="text-center my-3">
+          <label for="coordinate">Ingresa una coordenada (Ejemplo: A0):</label>
+          <input type="text" id="coordinate" class="form-control d-inline-block w-auto" />
+          <button id="submitCoordinate" class="btn btn-primary mt-2">Confirmar Coordenada</button>
+        </div>
+
+        <!-- Mensaje de estado -->
+        <p id="statusMessage" class="text-center"></p>
       </div>
     </div>
 
